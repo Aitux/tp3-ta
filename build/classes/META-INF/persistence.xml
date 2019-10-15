@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="biblio" transaction-type="RESOURCE_LOCAL">
+		<class>fr.fil.ta.model.Lecteur</class>
+		<class>fr.fil.ta.model.Bibliotheque</class>
+		<class>fr.fil.ta.model.Livre</class>
+		<class>fr.fil.ta.model.BD</class>
+		<class>fr.fil.ta.model.Roman</class>
+		<class>fr.fil.ta.model.Auteur</class>
+		
+		<properties>
+            <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.EmbeddedDriver" />
+                <property name="javax.persistence.jdbc.url"
+                value="jdbc:derby:/home/m2miage/vandeputte/databases/relationsshipDb2;create=true" />
+            <property name="javax.persistence.jdbc.user" value="test" />
+            <property name="javax.persistence.jdbc.password" value="test" />
+
+            <!-- EclipseLink should create the database schema automatically -->
+            <property name="eclipselink.ddl-generation" value="drop-and-create-tables" />
+            <property name="eclipselink.ddl-generation.output-mode"
+                value="database" />
+        </properties>
+	</persistence-unit>
+</persistence>
